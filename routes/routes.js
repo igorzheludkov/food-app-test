@@ -27,7 +27,7 @@ router.get('/api/orders', async (req, res) => {
 router.post('/api/orders', (req, res) => {
   try {
     const order = new UserOrder(req.body)
-    console.log(order)
+    console.log(req.body)
     order.save()
     res.json('Received')
   } catch (e) {

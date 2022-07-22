@@ -24,7 +24,7 @@ function Cart() {
     cart
       .map((i) => i.price)
       .reduce((previousValue, currentValue) => previousValue + currentValue)
-
+console.log(form);
   const validation =
     (form.name.length &&
       form.email.length &&
