@@ -19,6 +19,7 @@ router.get('/api/shops', async (req, res) => {
 })
 router.get('/api/orders', async (req, res) => {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     const items = await UserOrder.find({ phone: req.query.q })
     res.json(items)
   } catch (e) {
@@ -27,6 +28,7 @@ router.get('/api/orders', async (req, res) => {
 })
 router.post('/api/orders', (req, res) => {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     const order = new UserOrder(req.body)
     console.log(order)
     order.save()
