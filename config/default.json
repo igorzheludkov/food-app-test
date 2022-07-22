@@ -1,4 +1,3 @@
 {
-    "port" : 5000,
-    "mongoUrl": "mongodb+srv://admin-ihor:mongotestpassword@cluster0.h6gvx.mongodb.net/FoodApp?retryWrites=true&w=majority"
+  "mongoUrl": "mongodb+srv://admin-ihor:mongotestpassword@cluster0.h6gvx.mongodb.net/FoodApp?retryWrites=true&w=majority"
 }

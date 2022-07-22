@@ -7,12 +7,15 @@ const app = express()
 app.use('/', require('./routes/routes.js'))
 app.use(express.json())
 
-const PORT = config.get('port') || 3000
+let port = process.env.PORT
+if (port == null || port == "") {
+  port = 5000
+}
 
 async function start () {
     try {
         await mongoose.connect(config.get('mongoUrl'))
-        app.listen(PORT, ()=> {console.log(`App has been started on port ${PORT}`);})
+        app.listen(port, ()=> {console.log(`App has been started on port ${port}`);})
     } catch (e) {
         console.log('Server error', e.message);
         process.exit(1)
