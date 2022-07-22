@@ -4,6 +4,7 @@ import { remFromCart, addToCart } from '../store/cartNew'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useSubmitOrderMutation } from '../store/shopData/shopData'
+import { Outlet, Link } from 'react-router-dom'
 
 function Cart() {
   const dispatch = useDispatch()
@@ -126,10 +127,9 @@ function Cart() {
       <div className='container'>
         <div className='cart-empty'>
           <h1 className='item-food__name'>Ваш кошик пустий</h1>
-
-          <a href='/'>
+          <Link to={'/'}>
             <button className='btn btnDef'>Перейти на головну</button>
-          </a>
+          </Link>
         </div>
       </div>
     )
