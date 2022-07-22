@@ -1,0 +1,241 @@
+:root {
+  --main-bg-color: rgb(254, 241, 0);
+  --secondary-bg-color: rgb(255, 250, 152);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap');
+* {
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+}
+
+.container {
+  padding-top: 80px;
+}
+
+a {
+  color: rgb(177, 69, 7);
+}
+
+.foods-layout {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.item-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+}
+
+.item-food__img {
+  width: 200px;
+}
+
+.item-food__name {
+  margin: 20px auto;
+}
+.item-food__price {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.shops-layout {
+  display: flex;
+}
+.shops-sidebar {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-item a {
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.shop-item a.active {
+  background-color: var(--secondary-bg-color);
+}
+.nav {
+  background: rgb(254, 241, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+}
+.nav__item {
+  padding: 5px 10px;
+}
+
+.nav__cart {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.logo {
+  font-size: 30px;
+  margin-right: 20px;
+  width: 120px;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 800;
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  background: var(--secondary-bg-color);
+  border: 1px solid var(--secondary-bg-color);
+  border-radius: 5px;
+  height: 50px;
+}
+
+.btnDef {
+  width: 150px;
+}
+.btnQ {
+  width: 50px;
+}
+.btnV {
+  width: 50px;
+}
+
+.cart__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.cart__form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.cart__form input {
+  height: 45px;
+  border-radius: 5px;
+  border: 4px dashed var(--main-bg-color);
+  margin-bottom: 15px;
+}
+.cart__form label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.cart__items {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.cart-logo {
+  width: 40px;
+}
+
+.cart-link {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.cart-link * {
+  padding: 5px;
+}
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 20px;
+}
+
+.buttons-block {
+  display: flex;
+}
+
+.orders-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.orders-title {
+  margin: 20px 10px;
+}
+.order-title {
+  margin: 30px auto 10px;
+}
+
+.order-img {
+  width: 100px;
+  height: 100px;
+}
+
+.orders-history input {
+  font-size: 20px;
+  height: 45px;
+  border-radius: 5px;
+  border: 4px dashed var(--main-bg-color);
+  margin-bottom: 15px;
+}
+.user-inner {
+  margin: 30px 0;
+  max-width: 600px;
+}
+
+.orders-history-img {
+  width: 30px;
+  height: 30px;
+}
+
+
+.orders-history-nav {
+  display: flex;
+  align-items: center;
+}
+.orders-history-nav h6 {
+  padding: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .shops-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    font-size: 30px;
+    margin-right: 0px;
+    width: 85px;
+  }
+  .cart__inner {
+    flex-direction: column-reverse;
+  }
+  .item-food {
+    margin: auto;
+  }
+}
