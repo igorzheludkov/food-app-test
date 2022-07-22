@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useSubmitOrderMutation } from '../store/shopData/shopData'
 import { Outlet, Link } from 'react-router-dom'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 function Cart() {
   let navigate = useNavigate()
@@ -16,8 +16,14 @@ function Cart() {
     email: '',
     phone: '',
     adress: '',
+    total: '',
     orders: [],
   })
+  const cartTotal =
+    cart.length > 0 &&
+    cart
+      .map((i) => i.price)
+      .reduce((previousValue, currentValue) => previousValue + currentValue)
 
   const validation =
     (form.name.length &&
@@ -41,18 +47,14 @@ function Cart() {
         .then((e) => console.log(e))
   }
 
-  function refreshCart() {
-    window.location.reload()
-  }
-
-  const routeChange = () =>{ 
-    let path = '/'; 
-    navigate(path);
+  const routeChange = () => {
+    let path = '/'
+    navigate(path)
     window.location.reload()
   }
 
   useEffect(() => {
-    setForm({ ...form, orders: cart })
+    setForm({ ...form, orders: cart, total: cartTotal })
   }, [cart])
 
   function removeHandler(e) {
@@ -112,6 +114,9 @@ function Cart() {
                 value={form.adress}
                 onChange={formHandler}
               />
+              <div className='cart-total'>
+                Загальна сума замовлення: {cartTotal} грн
+              </div>
               <button onClick={formSubmit} className='btn' type='submit'>
                 Оформити замовлення
               </button>

@@ -17,7 +17,7 @@ function ShopList() {
         <div className='shops-layout'>
           <div className='shops-sidebar'>
             {ArrayUniqueByShop.map((item) => (
-              <ShopListItem item={item} />
+              <ShopListItem key={item._id} item={item} />
             ))}
           </div>
           <Outlet />

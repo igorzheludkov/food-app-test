@@ -8,6 +8,7 @@ const schema = new Schema({
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   img_link: { type: String, required: true },
+  total: {type: Number, required: true}
 })
 
 
