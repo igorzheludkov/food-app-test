@@ -29,6 +29,7 @@ router.get('/api/orders', async (req, res) => {
 router.post('/api/orders', (req, res) => {
   try {
     res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     const order = new UserOrder(req.body)
     console.log(order)
     order.save()

@@ -23,7 +23,7 @@ export const shopApi = createApi({
         method: 'POST',
         body: payload,
         headers: {
-          'Content-type': 'application/json; charset=UTF-8',
+          'Content-type': 'application/json; charset=UTF-8', 
         },
       }),
     }),
