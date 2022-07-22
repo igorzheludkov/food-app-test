@@ -5,8 +5,10 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useSubmitOrderMutation } from '../store/shopData/shopData'
 import { Outlet, Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  let navigate = useNavigate()
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cartUpdate)
   const [form, setForm] = useState({
@@ -34,12 +36,18 @@ function Cart() {
       submitOrder(form)
         .then((res) => {
           console.log(res)
-          refreshCart()
+          routeChange()
         })
         .then((e) => console.log(e))
   }
 
   function refreshCart() {
+    window.location.reload()
+  }
+
+  const routeChange = () =>{ 
+    let path = '/'; 
+    navigate(path);
     window.location.reload()
   }
 
