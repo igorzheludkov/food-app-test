@@ -5,3 +5,4 @@ Steps to launch app.
 
 App is starting in dev mode by command: npm run dev
 
+The application can be viewed at https://life-tree.space/
