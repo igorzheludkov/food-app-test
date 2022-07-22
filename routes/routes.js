@@ -10,6 +10,7 @@ router.use(bodyParser.json())
 
 router.get('/api/shops', async (req, res) => {
   try {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     const items = await ItemFood.find()
     res.json(items)
   } catch (e) {

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const shopApi = createApi({
   reducerPath: 'shops/data',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api',
+    baseUrl: 'https://food-app-test-server.herokuapp.com/api',
   }),
   endpoints: (builder) => ({
     shopItems: builder.query({
