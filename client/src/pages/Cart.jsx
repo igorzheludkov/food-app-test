@@ -4,7 +4,7 @@ import { remFromCart, addToCart } from '../store/cartNew'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useSubmitOrderMutation } from '../store/shopData/shopData'
-import { Outlet, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Cart() {
@@ -19,12 +19,13 @@ function Cart() {
     total: '',
     orders: [],
   })
+
   const cartTotal =
     cart.length > 0 &&
     cart
       .map((i) => i.price)
       .reduce((previousValue, currentValue) => previousValue + currentValue)
-console.log(form);
+
   const validation =
     (form.name.length &&
       form.email.length &&
@@ -127,7 +128,6 @@ console.log(form);
                   key={index}
                   items={i}
                   onClick={removeHandler}
-                  index={index}
                 />
               ))}
             </div>

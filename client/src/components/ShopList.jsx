@@ -6,10 +6,10 @@ import ShopListItem from './ShopListItem'
 function ShopList() {
   const { isLoading, isError, data } = useShopItemsQuery()
 
-  if (data) {
+  // if (data) {
     const key = 'shop_id'
     const ArrayUniqueByShop = [
-      ...new Map(data.map((item) => [item[key], item])).values(),
+      ...new Map(data?.map((item) => [item[key], item])).values(),
     ]
 
     return (
@@ -24,7 +24,7 @@ function ShopList() {
         </div>
       </div>
     )
-  }
+  // }
 }
 
 export default ShopList
