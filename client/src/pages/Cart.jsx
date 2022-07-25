@@ -38,6 +38,12 @@ function Cart() {
     ...new Map(cart.map((item) => [item[key], item])).values(),
   ].sort((a, b) => (a._id > b._id ? 1 : b._id > a._id ? -1 : 0))
 
+  // localStorage.setItem('cart', JSON.stringify(cart))
+
+  // let cartStorage = localStorage.getItem('cart')
+
+
+
   function formSubmit() {
     validation &&
       submitOrder(form)

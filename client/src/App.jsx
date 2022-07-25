@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import ShopMenu from './components/ShopMenu'
@@ -8,6 +8,9 @@ import Nav from './components/Nav'
 import ShopList from './components/ShopList'
 
 function App() {
+
+  const [cartState, setCartState] = useState([])
+  
   return (
     <>
       <Nav />
